@@ -19,12 +19,17 @@ class AddIngredientCoordinator: AddIngredientCoordinatorProtocol {
     
     func start() {
         let storyboard = R.storyboard.addIngredient
-        let view = storyboard.addIngredientViewController() ?? UIViewController()
-        navigationController?.pushViewController(view, animated: false)
+        guard let view = storyboard.addIngredientViewController() else{
+            assertionFailure("Couldn't generate View")
+            return
+        }
+        let configurator = AddIngredientConfigurator(view: view, coordinator: self)
+        let configuredView = configurator.configure()
+        navigationController?.pushViewController(configuredView, animated: false)
     }
     
     func showIngredients(ingredientsService: ExtractIngredientProtocol) {
-        
+        navigationController?.pushViewController(UIViewController(), animated: true)
     }
     
 }

@@ -22,6 +22,7 @@
 		D9955602278F27D2004029B3 /* AddIngredientValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9955601278F27D2004029B3 /* AddIngredientValidator.swift */; };
 		D9955604278F29DA004029B3 /* PresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9955603278F29DA004029B3 /* PresentationProtocol.swift */; };
 		D9955607278F37C4004029B3 /* AddIngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9955606278F37C4004029B3 /* AddIngredientViewModel.swift */; };
+		D995560A278F4DAC004029B3 /* AddIngredientConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9955609278F4DAC004029B3 /* AddIngredientConfigurator.swift */; };
 		D9F67F08278C6E3400B27F8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F67F07278C6E3400B27F8F /* AppDelegate.swift */; };
 		D9F67F0A278C6E3400B27F8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F67F09278C6E3400B27F8F /* SceneDelegate.swift */; };
 		D9F67F0C278C6E3400B27F8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F67F0B278C6E3400B27F8F /* ViewController.swift */; };
@@ -73,6 +74,7 @@
 		D9955601278F27D2004029B3 /* AddIngredientValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientValidator.swift; sourceTree = "<group>"; };
 		D9955603278F29DA004029B3 /* PresentationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationProtocol.swift; sourceTree = "<group>"; };
 		D9955606278F37C4004029B3 /* AddIngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientViewModel.swift; sourceTree = "<group>"; };
+		D9955609278F4DAC004029B3 /* AddIngredientConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientConfigurator.swift; sourceTree = "<group>"; };
 		D9F67F04278C6E3400B27F8F /* challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F67F07278C6E3400B27F8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9F67F09278C6E3400B27F8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		D9338029278F123A006D5689 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D9955608278F4D99004029B3 /* DI */,
 				D9955605278F3796004029B3 /* ViewModel */,
 				D9338020278EF93B006D5689 /* View */,
 				D9F67F50278C7CAB00B27F8F /* Coordinator */,
@@ -183,7 +186,7 @@
 		D933803A278F1C5C006D5689 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				D9338083278F1F7A006D5689 /* Service */,
+				D9338083278F1F7A006D5689 /* Logic */,
 				D9338082278F1F5D006D5689 /* Entity */,
 				D9338081278F1F54006D5689 /* UseCase */,
 				D933803D278F1CB2006D5689 /* DomainProtocol.swift */,
@@ -208,13 +211,13 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
-		D9338083278F1F7A006D5689 /* Service */ = {
+		D9338083278F1F7A006D5689 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
 				D9338084278F1F93006D5689 /* ExtractIngredientService.swift */,
 				D9955601278F27D2004029B3 /* AddIngredientValidator.swift */,
 			);
-			path = Service;
+			path = Logic;
 			sourceTree = "<group>";
 		};
 		D9955605278F3796004029B3 /* ViewModel */ = {
@@ -223,6 +226,14 @@
 				D9955606278F37C4004029B3 /* AddIngredientViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D9955608278F4D99004029B3 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				D9955609278F4DAC004029B3 /* AddIngredientConfigurator.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 		D9F67EFB278C6E3400B27F8F = {
@@ -604,6 +615,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9955602278F27D2004029B3 /* AddIngredientValidator.swift in Sources */,
+				D995560A278F4DAC004029B3 /* AddIngredientConfigurator.swift in Sources */,
 				D9F67F0C278C6E3400B27F8F /* ViewController.swift in Sources */,
 				D9338026278EFC6A006D5689 /* AddIngredientViewController.swift in Sources */,
 				D9955607278F37C4004029B3 /* AddIngredientViewModel.swift in Sources */,

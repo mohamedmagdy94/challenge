@@ -27,14 +27,19 @@ class ExtractIngredientService: ExtractIngredientProtocol{
         if !validationResult{
             return .failure(.INVALID_INPUT)
         }else{
-            ingredientsStrings = userInput.components(separatedBy: "\n")
-            ingredients = ingredientsStrings.map(extractIngredient)
+            ingredientsStrings = userInput
+                .replacingOccurrences(of: ",", with: "")
+                .components(separatedBy: "\n")
+            ingredientsStrings.removeAll{ $0 == "" }
+            let userIngredients = ingredientsStrings.map(extractIngredient)
+            ingredients = userIngredients.compactMap{ $0 }
             return .success(ingredients)
         }
     }
     
-    private func extractIngredient(ingredientString: String)->Ingredient{
+    private func extractIngredient(ingredientString: String)->Ingredient?{
         let ingredientsComponents = ingredientString.components(separatedBy: " ")
+        if ingredientsComponents.count != 3{ return nil }
         let ingredientQuantity = Int(ingredientsComponents[1]) ?? 0
         let ingredient = Ingredient(quantity: ingredientQuantity, unit: ingredientsComponents[2], name: ingredientsComponents[0], calories: nil, weight: nil)
         return ingredient

@@ -36,7 +36,7 @@ class AddIngredientUseCase: AddIngredientUseCaseProtocol{
             let isIngredientsAvailable = ingredients.count > 0
             result = Observable.just(isIngredientsAvailable)
         case .failure(let error):
-            result = Observable.error(error)
+            result = Observable.just(false)
         }
         return result
     }
