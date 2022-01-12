@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class AddIngredientCoordinator: Coordinating {
+class AddIngredientCoordinator: AddIngredientCoordinatorProtocol {
     
     
     private var navigationController: UINavigationController?
@@ -21,6 +21,10 @@ class AddIngredientCoordinator: Coordinating {
         let storyboard = R.storyboard.addIngredient
         let view = storyboard.addIngredientViewController() ?? UIViewController()
         navigationController?.pushViewController(view, animated: false)
+    }
+    
+    func showIngredients(ingredientsService: ExtractIngredientProtocol) {
+        
     }
     
 }

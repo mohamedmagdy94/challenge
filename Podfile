@@ -7,6 +7,7 @@ target 'challenge' do
     pod 'RxSwift', '5.0.0'
     pod 'RxCocoa', '5.0.0'
     pod 'R.swift'
+    pod 'RxOptional'
 
   target 'challengeTests' do
     inherit! :search_paths

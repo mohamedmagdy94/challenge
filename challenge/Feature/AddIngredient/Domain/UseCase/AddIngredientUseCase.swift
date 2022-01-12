@@ -28,4 +28,17 @@ class AddIngredientUseCase: AddIngredientUseCaseProtocol{
         return result
     }
     
+    func isIngredientAvaiable(userInput: String) -> Observable<Bool> {
+        let ingredientsExtractResult = extractIngredientsService.extractIngredients(userInput: userInput)
+        let result: Observable<Bool>!
+        switch ingredientsExtractResult{
+        case .success(let ingredients):
+            let isIngredientsAvailable = ingredients.count > 0
+            result = Observable.just(isIngredientsAvailable)
+        case .failure(let error):
+            result = Observable.error(error)
+        }
+        return result
+    }
+    
 }

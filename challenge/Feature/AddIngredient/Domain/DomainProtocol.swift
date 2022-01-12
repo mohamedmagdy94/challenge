@@ -9,7 +9,9 @@ import Foundation
 import RxSwift
 
 protocol AddIngredientUseCaseProtocol{
+    var extractIngredientsService: ExtractIngredientProtocol{get}
     func getIngredients(userInput: String)->Observable<Ingredient>
+    func isIngredientAvaiable(userInput: String)->Observable<Bool>
 }
 
 protocol ExtractIngredientProtocol{
