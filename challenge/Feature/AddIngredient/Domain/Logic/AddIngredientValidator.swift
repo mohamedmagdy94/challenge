@@ -11,7 +11,6 @@ class AddIngredientValidator: AddIngredientValidatorProtocol{
     
     func validate(userInput: String) -> Bool {
         let firstCondition = !userInput.isEmpty
-        let stringSeperated = userInput.replacingOccurrences(of: ",", with: "").components(separatedBy: "\n")
         let secondCondition = isThereAvailableIngredient(userInput: userInput)
         return firstCondition && secondCondition
     }

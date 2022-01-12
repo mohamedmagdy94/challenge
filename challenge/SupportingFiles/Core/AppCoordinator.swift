@@ -19,7 +19,7 @@ class AppCoordinator{
     func start(){
         let navigationController = UINavigationController()
         let firstScreenCoordinator = AddIngredientCoordinator(navigationController: navigationController)
-        let firstScreen = firstScreenCoordinator.start()
+        firstScreenCoordinator.start()
         window?.rootViewController = navigationController
         
     }

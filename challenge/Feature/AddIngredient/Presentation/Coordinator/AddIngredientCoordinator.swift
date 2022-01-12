@@ -29,7 +29,12 @@ class AddIngredientCoordinator: AddIngredientCoordinatorProtocol {
     }
     
     func showIngredients(ingredientsService: ExtractIngredientProtocol) {
-        navigationController?.pushViewController(UIViewController(), animated: true)
+        guard let navigationController = navigationController else {
+            assertionFailure("Couldn't Push View")
+            return
+        }
+        let nextScreen = IngrediantDetailsCoordinator(navigationController: navigationController,extractIngredientsService: ingredientsService)
+        nextScreen.start()
     }
     
 }

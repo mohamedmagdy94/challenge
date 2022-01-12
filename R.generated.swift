@@ -89,10 +89,12 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
   struct storyboard {
     /// Storyboard `AddIngredient`.
     static let addIngredient = _R.storyboard.addIngredient()
+    /// Storyboard `IngredientDetails`.
+    static let ingredientDetails = _R.storyboard.ingredientDetails()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
@@ -102,6 +104,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "AddIngredient", bundle: ...)`
     static func addIngredient(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.addIngredient)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "IngredientDetails", bundle: ...)`
+    static func ingredientDetails(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.ingredientDetails)
     }
     #endif
 
@@ -206,6 +215,9 @@ struct _R: Rswift.Validatable {
       try addIngredient.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try ingredientDetails.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try launchScreen.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -227,6 +239,26 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.addIngredient().addIngredientViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addIngredientViewController' could not be loaded from storyboard 'AddIngredient' as 'AddIngredientViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct ingredientDetails: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let ingredientDetailsViewController = StoryboardViewControllerResource<IngredientDetailsViewController>(identifier: "IngredientDetailsViewController")
+      let name = "IngredientDetails"
+
+      func ingredientDetailsViewController(_: Void = ()) -> IngredientDetailsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: ingredientDetailsViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.ingredientDetails().ingredientDetailsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'ingredientDetailsViewController' could not be loaded from storyboard 'IngredientDetails' as 'IngredientDetailsViewController'.") }
       }
 
       fileprivate init() {}
