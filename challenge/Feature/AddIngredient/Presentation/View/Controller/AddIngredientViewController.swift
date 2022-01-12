@@ -6,13 +6,24 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxOptional
 
 class AddIngredientViewController: UIViewController {
 
+    @IBOutlet weak var userInput: UITextView!
+    @IBOutlet weak var analyzeButton: UIButton!
+    
+    private var viewModel: AddIngredientView
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setup()
+    }
+    
+    private func setup(){
+        
     }
     
 }
