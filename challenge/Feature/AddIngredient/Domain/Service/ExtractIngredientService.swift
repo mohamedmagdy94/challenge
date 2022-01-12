@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ExtractIngredientService:ExtractIngredientProtocol{
+class ExtractIngredientService: ExtractIngredientProtocol{
     
     private var userInput: String
     private var ingredientsStrings: [String]
@@ -39,4 +39,5 @@ class ExtractIngredientService:ExtractIngredientProtocol{
         let ingredient = Ingredient(quantity: ingredientQuantity, unit: ingredientsComponents[2], name: ingredientsComponents[0], calories: nil, weight: nil)
         return ingredient
     }
+    
 }

@@ -20,6 +20,8 @@
 		D9338085278F1F93006D5689 /* ExtractIngredientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9338084278F1F93006D5689 /* ExtractIngredientService.swift */; };
 		D9955600278F2610004029B3 /* AddIngredientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99555FF278F2610004029B3 /* AddIngredientError.swift */; };
 		D9955602278F27D2004029B3 /* AddIngredientValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9955601278F27D2004029B3 /* AddIngredientValidator.swift */; };
+		D9955604278F29DA004029B3 /* PresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9955603278F29DA004029B3 /* PresentationProtocol.swift */; };
+		D9955607278F37C4004029B3 /* AddIngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9955606278F37C4004029B3 /* AddIngredientViewModel.swift */; };
 		D9F67F08278C6E3400B27F8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F67F07278C6E3400B27F8F /* AppDelegate.swift */; };
 		D9F67F0A278C6E3400B27F8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F67F09278C6E3400B27F8F /* SceneDelegate.swift */; };
 		D9F67F0C278C6E3400B27F8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F67F0B278C6E3400B27F8F /* ViewController.swift */; };
@@ -69,6 +71,8 @@
 		D9338084278F1F93006D5689 /* ExtractIngredientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractIngredientService.swift; sourceTree = "<group>"; };
 		D99555FF278F2610004029B3 /* AddIngredientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientError.swift; sourceTree = "<group>"; };
 		D9955601278F27D2004029B3 /* AddIngredientValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientValidator.swift; sourceTree = "<group>"; };
+		D9955603278F29DA004029B3 /* PresentationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationProtocol.swift; sourceTree = "<group>"; };
+		D9955606278F37C4004029B3 /* AddIngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientViewModel.swift; sourceTree = "<group>"; };
 		D9F67F04278C6E3400B27F8F /* challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F67F07278C6E3400B27F8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9F67F09278C6E3400B27F8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,8 +172,10 @@
 		D9338029278F123A006D5689 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D9955605278F3796004029B3 /* ViewModel */,
 				D9338020278EF93B006D5689 /* View */,
 				D9F67F50278C7CAB00B27F8F /* Coordinator */,
+				D9955603278F29DA004029B3 /* PresentationProtocol.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -209,6 +215,14 @@
 				D9955601278F27D2004029B3 /* AddIngredientValidator.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		D9955605278F3796004029B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D9955606278F37C4004029B3 /* AddIngredientViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D9F67EFB278C6E3400B27F8F = {
@@ -592,6 +606,8 @@
 				D9955602278F27D2004029B3 /* AddIngredientValidator.swift in Sources */,
 				D9F67F0C278C6E3400B27F8F /* ViewController.swift in Sources */,
 				D9338026278EFC6A006D5689 /* AddIngredientViewController.swift in Sources */,
+				D9955607278F37C4004029B3 /* AddIngredientViewModel.swift in Sources */,
+				D9955604278F29DA004029B3 /* PresentationProtocol.swift in Sources */,
 				D9F67F12278C6E3400B27F8F /* challenge.xcdatamodeld in Sources */,
 				D9955600278F2610004029B3 /* AddIngredientError.swift in Sources */,
 				D933801F278EF8FA006D5689 /* R.generated.swift in Sources */,
